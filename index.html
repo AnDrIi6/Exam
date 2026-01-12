@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор — Екзамен з Web-технологій</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="container">
+      <h1>Екзаменаційна робота</h1>
+      <h2>Дячук Андрій</h2>
+      <p class="muted">Веб-застосунок «Калькулятор»: +, −, ×, ÷, ln, sin, tan (sin/tan у градусах).</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="grid">
+          <div>
+            <label for="op1">Операнд 1</label>
+            <input id="op1" type="text" inputmode="decimal" placeholder="наприклад, 12.5">
+          </div>
+          <div>
+            <label for="op2">Операнд 2</label>
+            <input id="op2" type="text" inputmode="decimal" placeholder="наприклад, 3">
+          </div>
+        </div>
+
+        <div class="result-wrap">
+          <h3 id="res" aria-live="polite">Результат: —</h3>
+        </div>
+
+        <div class="buttons">
+          <button id="add-button" type="button" title="Додавання">+</button>
+          <button id="sub-button" type="button" title="Віднімання">−</button>
+          <button id="mul-button" type="button" title="Множення">×</button>
+          <button id="div-button" type="button" title="Ділення">÷</button>
+
+          <span class="divider" aria-hidden="true"></span>
+
+          <button id="log-button" type="button" title="Натуральний логарифм">ln</button>
+          <button id="sin-button" type="button" title="Синус (у градусах)">sin</button>
+          <button id="tan-button" type="button" title="Тангенс (у градусах)">tan</button>
+        </div>
+
+        <p class="hint">
+          Для <strong>ln/sin/tan</strong> використовується тільки <strong>Операнд 1</strong>.
+          Довідка підтягується зі статичного JSON (папка <code>/data</code>).
+        </p>
+      </section>
+
+      <section id="content" class="card content" aria-live="polite"></section>
+    </main>
+
+    <script src="js/ajax-utils.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
